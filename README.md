@@ -27,3 +27,11 @@ cd $GOPATH/src/github.com/Brownster/licensescraper
 go build
 
 This will create an executable in the current directory that you can use as described in the Usage section.
+    
+The license_scraper_test.go file contains tests for the license_scraper.go code. Let's look at two important test functions in it:
+
+    TestScrapeExpirationDaysRemaining: This test checks the ScrapeExpirationDaysRemaining function of the LicenseScraper class. A mock connector is created with paths to some sample XML files. The ScrapeExpirationDaysRemaining method is called on this mock connector. If the method returns an error, the test fails with an error message. For every metric returned by the method, the test prints the metric name, its value, and its labels​1​.
+
+    TestLicenseScraper: This test function checks the Scrape function of the LicenseScraper class. Similar to the previous test, it creates a mock connector with paths to sample XML files. The Scrape method is then called on this mock connector. If the method returns an error, the test fails with an error message. For every metric returned by the method, the test prints the metric name, its value, and its labels​1​.
+
+These tests are important for ensuring the functionality and correctness of the license scraper. They simulate the actual process the scraper would go through, but in a controlled testing environment.
